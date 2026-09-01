@@ -1,0 +1,30 @@
+{
+  "routes": {
+    "GET:/api/users": {
+      "status": 200,
+      "body": [
+        {"id": 1, "name": "Alice"},
+        {"id": 2, "name": "Bob"}
+      ],
+      "headers": {"Content-Type": "application/json"}
+    },
+    "GET:/api/users/1": {
+      "status": 200,
+      "body": {"id": 1, "name": "Alice", "email": "alice@example.com"}
+    },
+    "POST:/api/users": {
+      "status": 201,
+      "body": {"id": 3, "name": "Charlie"},
+      "headers": {"Content-Type": "application/json"}
+    },
+    "GET:/api/health": {
+      "status": 200,
+      "body": {"status": "ok"}
+    }
+  },
+  "default": {
+    "status": 404,
+    "body": {"error": "Not Found", "message": "This route is not mocked."},
+    "headers": {"Content-Type": "application/json"}
+  }
+}
